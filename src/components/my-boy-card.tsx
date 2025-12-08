@@ -78,8 +78,8 @@ export default function MyBoyCard() {
                   <div className="flex items-start gap-3">
                     <Heart className="text-accent mt-1 h-5 w-5 shrink-0" />
                     <div>
-                      <p className="text-foreground font-semibold">Official ATM</p>
-                      <p className="text-foreground/60">Always funding my bubble tea adventures</p>
+                      <p className="text-foreground font-semibold">Gift Giver</p>
+                      <p className="text-foreground/60">Always giving me so many special gifts</p>
                     </div>
                   </div>
                 </div>
