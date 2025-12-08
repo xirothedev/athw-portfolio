@@ -3,6 +3,30 @@ import { motion } from "motion/react"
 import { Heart, ArrowDown } from "lucide-react"
 import Image from "next/image"
 
+function TypingText({ text, className }: { text: string; className?: string }) {
+  const letters = text.split("")
+
+  return (
+    <span className={className}>
+      {letters.map((letter, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.3,
+            delay: 1 + index * 0.15,
+            ease: "easeOut",
+          }}
+          style={{ display: "inline-block" }}
+        >
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </span>
+  )
+}
+
 export default function HeroSection() {
   return (
     <section
@@ -36,7 +60,10 @@ export default function HeroSection() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="font-display text-foreground text-5xl leading-tight md:text-6xl"
             >
-              I&apos;m <span className="text-primary">Katii</span>
+              I&apos;m{" "}
+              <span className="drop-shadow-md" style={{ color: "oklch(0.65 0.12 350)" }}>
+                <TypingText text="Katii~" />
+              </span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
