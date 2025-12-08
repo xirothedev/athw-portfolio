@@ -5,17 +5,17 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-4 bg-linear-to-t from-primary/10 to-background border-t border-primary/20">
-      <div className="max-w-6xl mx-auto">
+    <footer className="from-primary/10 to-background border-primary/20 border-t bg-linear-to-t px-4 py-12">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center space-y-4"
+          className="space-y-4 text-center"
         >
-          <div className="flex items-center justify-center gap-2 text-foreground/70">
-            <Heart className="w-4 h-4 text-primary fill-primary" />
+          <div className="text-foreground/70 flex items-center justify-center gap-2">
+            <Heart className="text-primary fill-primary h-4 w-4" />
             <p className="text-sm">
               Made with love by{" "}
               <a
@@ -27,17 +27,17 @@ export default function Footer() {
                 xirothedev
               </a>
             </p>
-            <Heart className="w-4 h-4 text-primary fill-primary" />
+            <Heart className="text-primary fill-primary h-4 w-4" />
           </div>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <p className="text-xs text-foreground/50">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <p className="text-foreground/50 text-xs">
               © {new Date().getFullYear()} xirothedev. All rights reserved.
             </p>
             <Link
               href="/license"
-              className="inline-flex items-center gap-1.5 text-xs text-foreground/70 hover:text-primary transition-colors"
+              className="text-foreground/70 hover:text-primary inline-flex items-center gap-1.5 text-xs transition-colors"
             >
-              <Code className="w-3.5 h-3.5" />
+              <Code className="h-3.5 w-3.5" />
               Source Code & License
             </Link>
           </div>
@@ -46,4 +46,3 @@ export default function Footer() {
     </footer>
   )
 }
-

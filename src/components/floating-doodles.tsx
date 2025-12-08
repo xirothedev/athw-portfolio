@@ -12,11 +12,11 @@ export default function FloatingDoodles() {
   ]
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 overflow-hidden">
       {doodles.map((doodle, i) => (
         <motion.div
           key={i}
-          className="absolute doodle"
+          className="doodle absolute"
           initial={{ x: `${doodle.x}%`, y: `${doodle.y}%` }}
           animate={{
             x: [`${doodle.x}%`, `${doodle.x + 20}%`, `${doodle.x}%`],
@@ -29,9 +29,9 @@ export default function FloatingDoodles() {
           }}
         >
           {doodle.type === "heart" ? (
-            <Heart className="w-12 h-12 text-primary/20 fill-primary/20" />
+            <Heart className="text-primary/20 fill-primary/20 h-12 w-12" />
           ) : (
-            <Sparkles className="w-12 h-12 text-accent/20 fill-accent/20" />
+            <Sparkles className="text-accent/20 fill-accent/20 h-12 w-12" />
           )}
         </motion.div>
       ))}

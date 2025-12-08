@@ -23,7 +23,7 @@ const milestones = [
   },
   {
     icon: Sparkles,
-    title: `${new Date().getDate()} ${new Date().toLocaleString('default', { month: 'long' })} ${new Date().getFullYear()}`,
+    title: `${new Date().getDate()} ${new Date().toLocaleString("default", { month: "long" })} ${new Date().getFullYear()}`,
     date: "March 2024",
     description: "The days we spend together",
   },
@@ -31,18 +31,23 @@ const milestones = [
 
 export default function RelationshipRoadmap() {
   return (
-    <section id="roadmap" className="py-20 px-4 bg-linear-to-b from-background via-accent/5 to-background">
-      <div className="max-w-4xl mx-auto">
+    <section
+      id="roadmap"
+      className="from-background via-accent/5 to-background bg-linear-to-b px-4 py-20"
+    >
+      <div className="mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <p className="text-primary font-semibold mb-2">📍 Our Journey</p>
-          <h2 className="font-display text-5xl text-foreground">Relationship Roadmap</h2>
-          <p className="text-foreground/70 text-lg mt-4">Milestones of our high school love story</p>
+          <p className="text-primary mb-2 font-semibold">📍 Our Journey</p>
+          <h2 className="font-display text-foreground text-5xl">Relationship Roadmap</h2>
+          <p className="text-foreground/70 mt-4 text-lg">
+            Milestones of our high school love story
+          </p>
         </motion.div>
 
         <div className="space-y-8">
@@ -55,23 +60,23 @@ export default function RelationshipRoadmap() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.6 }}
                 viewport={{ once: true }}
-                className={`flex gap-8 items-center ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                className={`flex items-center gap-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
                 {/* Timeline dot and line */}
-                <div className="hidden md:flex flex-col items-center shrink-0">
+                <div className="hidden shrink-0 flex-col items-center md:flex">
                   <motion.div
                     whileInView={{ scale: [1, 1.2, 1] }}
                     transition={{ delay: i * 0.2 + 0.3, duration: 0.6 }}
-                    className="w-16 h-16 bg-linear-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg"
+                    className="from-primary to-secondary flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br text-white shadow-lg"
                   >
-                    <Icon className="w-8 h-8" />
+                    <Icon className="h-8 w-8" />
                   </motion.div>
                   {i < milestones.length - 1 && (
                     <motion.div
                       initial={{ height: 0 }}
                       whileInView={{ height: 80 }}
                       transition={{ delay: i * 0.2 + 0.6, duration: 0.8 }}
-                      className="w-1 bg-linear-to-b from-primary via-accent to-secondary mt-4"
+                      className="from-primary via-accent to-secondary mt-4 w-1 bg-linear-to-b"
                     ></motion.div>
                   )}
                 </div>
@@ -79,16 +84,18 @@ export default function RelationshipRoadmap() {
                 {/* Content */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="flex-1 bg-card border-2 border-primary/20 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-card border-primary/20 flex-1 rounded-2xl border-2 p-6 shadow-lg transition-shadow hover:shadow-xl md:p-8"
                 >
-                  <div className="flex md:hidden items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-linear-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white">
-                      <Icon className="w-5 h-5" />
+                  <div className="mb-4 flex items-center gap-3 md:hidden">
+                    <div className="from-primary to-secondary flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-br text-white">
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="font-semibold text-lg text-foreground">{milestone.title}</h3>
+                    <h3 className="text-foreground text-lg font-semibold">{milestone.title}</h3>
                   </div>
-                  <h3 className="hidden md:block font-display text-2xl text-foreground mb-2">{milestone.title}</h3>
-                  <p className="text-accent font-semibold mb-2">{milestone.date}</p>
+                  <h3 className="font-display text-foreground mb-2 hidden text-2xl md:block">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-accent mb-2 font-semibold">{milestone.date}</p>
                   <p className="text-foreground/70">{milestone.description}</p>
                 </motion.div>
               </motion.div>

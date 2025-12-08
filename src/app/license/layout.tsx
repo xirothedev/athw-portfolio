@@ -7,34 +7,28 @@ export const metadata: Metadata = {
   description: "License and copyright information for this portfolio",
 }
 
-export default function LicenseLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function LicenseLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+    <div className="bg-background min-h-screen">
+      <div className="mx-auto max-w-4xl px-4 py-12">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-foreground/70 hover:text-foreground mb-8 transition-colors"
+          className="text-foreground/70 hover:text-foreground mb-8 inline-flex items-center gap-2 transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="h-4 w-4" />
           Back to Home
         </Link>
 
-        <div className="max-w-none">
-          {children}
-        </div>
+        <div className="max-w-none">{children}</div>
 
-        <div className="mt-12 pt-8 border-t border-primary/20">
+        <div className="border-primary/20 mt-12 border-t pt-8">
           <Link
             href="https://github.com/xirothedev/athw-portfolio"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-foreground rounded-full font-semibold hover:bg-secondary transition-colors"
+            className="bg-primary text-foreground hover:bg-secondary inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold transition-colors"
           >
-            <Github className="w-5 h-5" />
+            <Github className="h-5 w-5" />
             View Source Code on GitHub
           </Link>
         </div>
@@ -42,4 +36,3 @@ export default function LicenseLayout({
     </div>
   )
 }
-

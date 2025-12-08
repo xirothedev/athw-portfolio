@@ -17,23 +17,23 @@ export default function Navigation() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 backdrop-blur-md bg-primary/30 border-b border-accent/20"
+      className="bg-primary/30 border-accent/20 sticky top-0 z-50 border-b backdrop-blur-md"
     >
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="flex items-center gap-2 font-display text-2xl text-foreground"
+          className="font-display text-foreground flex items-center gap-2 text-2xl"
         >
-          <Heart className="w-6 h-6 fill-primary" />
+          <Heart className="fill-primary h-6 w-6" />
           <span>My Muse</span>
         </motion.div>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden items-center gap-8 md:flex">
           {navItems.map((item, i) => (
             <motion.li key={i} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
                 href={item.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+                className="text-foreground/70 hover:text-foreground text-sm font-medium transition-colors"
               >
                 {item.label}
               </a>

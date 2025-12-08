@@ -42,9 +42,7 @@ export const metadata: Metadata = {
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon-128x128.png", sizes: "128x128", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     other: [
       {
         rel: "manifest",

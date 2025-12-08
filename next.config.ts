@@ -1,5 +1,5 @@
-import createMDX from "@next/mdx";
-import type { NextConfig } from "next";
+import createMDX from "@next/mdx"
+import type { NextConfig } from "next"
 
 // Content Security Policy directives
 const cspDirectives = [
@@ -15,7 +15,7 @@ const cspDirectives = [
   "form-action 'self'",
   "frame-ancestors 'self'",
   "upgrade-insecure-requests",
-];
+]
 
 // Security headers configuration
 const securityHeaders = [
@@ -51,7 +51,7 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: cspDirectives.join("; "),
   },
-];
+]
 
 // Base Next.js config
 const baseConfig: NextConfig = {
@@ -65,21 +65,18 @@ const baseConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
-    ];
+    ]
   },
-};
+}
 
 // Next.js plugins array
 const plugins = [
   createMDX({
     // Add markdown plugins here, as desired
   }),
-];
+]
 
 // Apply all plugins using reduce
-const nextConfig = plugins.reduce(
-  (config, plugin) => plugin(config),
-  baseConfig
-);
+const nextConfig = plugins.reduce((config, plugin) => plugin(config), baseConfig)
 
-export default nextConfig;
+export default nextConfig

@@ -37,12 +37,14 @@ A soft & dreamy portfolio website dedicated to celebrating love and beautiful mo
 ## 📦 Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/xirothedev/athw-portfolio.git
 cd athw-portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 # or
@@ -52,21 +54,25 @@ yarn install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env.local
 ```
 
 Edit `.env.local` and add your base URL:
+
 ```env
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
 4. Generate favicons (optional):
+
 ```bash
 pnpm run generate-favicons
 ```
 
 5. Run the development server:
+
 ```bash
 pnpm dev
 # or
@@ -115,6 +121,7 @@ athw-portfolio/
 ### Colors
 
 Edit color palette in `src/app/globals.css`:
+
 - Primary colors
 - Accent colors
 - Background and foreground
@@ -131,12 +138,14 @@ Edit color palette in `src/app/globals.css`:
 ### Fonts
 
 Fonts are configured in `src/app/layout.tsx`:
+
 - **Sans**: Nunito (default)
 - **Display**: Dancing Script (for headings)
 
 ## 🔒 Security
 
 The project includes comprehensive security headers:
+
 - Content Security Policy (CSP)
 - Strict Transport Security (HSTS)
 - X-Frame-Options

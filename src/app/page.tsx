@@ -23,7 +23,12 @@ const container = {
 
 export default function Home() {
   return (
-    <motion.main variants={container} initial="hidden" animate="show" className="relative w-full overflow-x-hidden">
+    <motion.main
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="relative w-full overflow-x-hidden"
+    >
       <FloatingDoodles />
       <Navigation />
       <HeroSection />

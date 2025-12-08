@@ -28,21 +28,23 @@ export default function TraitsShowcase() {
   }
 
   return (
-    <section id="traits" className="py-20 px-4 bg-linear-to-b from-background to-primary/10">
-      <div className="max-w-5xl mx-auto">
+    <section id="traits" className="from-background to-primary/10 bg-linear-to-b px-4 py-20">
+      <div className="mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <p className="text-primary font-semibold mb-2 flex items-center justify-center gap-2">
-            <Star className="w-5 h-5" />
+          <p className="text-primary mb-2 flex items-center justify-center gap-2 font-semibold">
+            <Star className="h-5 w-5" />
             Things I Love About Her
           </p>
-          <h2 className="font-display text-5xl text-foreground">Her Traits & Talents</h2>
-          <p className="text-foreground/70 text-lg mt-4">These are just some reasons why she&apos;s amazing</p>
+          <h2 className="font-display text-foreground text-5xl">Her Traits & Talents</h2>
+          <p className="text-foreground/70 mt-4 text-lg">
+            These are just some reasons why she&apos;s amazing
+          </p>
         </motion.div>
 
         <motion.div
@@ -50,24 +52,29 @@ export default function TraitsShowcase() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {traits.map((trait, i) => (
-            <motion.div key={i} variants={itemVariants} whileHover={{ scale: 1.05 }} className="group">
-              <div className="bg-card border-2 border-accent/20 rounded-2xl p-6 hover:border-accent/50 transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-semibold text-lg text-foreground">{trait.name}</h3>
+            <motion.div
+              key={i}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              className="group"
+            >
+              <div className="bg-card border-accent/20 hover:border-accent/50 rounded-2xl border-2 p-6 transition-colors">
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-foreground text-lg font-semibold">{trait.name}</h3>
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                     className="hidden group-hover:block"
                   >
-                    <Star className="w-5 h-5 text-primary fill-primary" />
+                    <Star className="text-primary fill-primary h-5 w-5" />
                   </motion.div>
                 </div>
 
                 {/* Progress bar */}
-                <div className="w-full h-3 bg-muted rounded-full overflow-hidden">
+                <div className="bg-muted h-3 w-full overflow-hidden rounded-full">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${trait.level}%` }}
@@ -77,7 +84,9 @@ export default function TraitsShowcase() {
                   ></motion.div>
                 </div>
 
-                <p className="text-right text-sm text-foreground/70 mt-2 font-semibold">{trait.level}%</p>
+                <p className="text-foreground/70 mt-2 text-right text-sm font-semibold">
+                  {trait.level}%
+                </p>
               </div>
             </motion.div>
           ))}

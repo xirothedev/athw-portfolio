@@ -5,6 +5,7 @@ Script này tự động tạo các favicon và icon ở nhiều kích thước 
 ## Cách sử dụng
 
 1. **Cài đặt dependencies:**
+
    ```bash
    npm install
    # hoặc
@@ -44,4 +45,3 @@ Script sẽ tạo các file sau trong thư mục `public/`:
 ## Metadata
 
 Các favicon đã được cấu hình trong `src/app/layout.tsx` và sẽ tự động được sử dụng bởi Next.js.
-

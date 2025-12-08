@@ -32,27 +32,27 @@ const photos = [
 
 export default function ThroughMyEyesGallery() {
   return (
-    <section id="gallery" className="py-20 px-4 bg-linear-to-b from-background to-primary/10">
-      <div className="max-w-6xl mx-auto">
+    <section id="gallery" className="from-background to-primary/10 bg-linear-to-b px-4 py-20">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <p className="text-accent font-semibold mb-2 flex items-center justify-center gap-2">
-            <Camera className="w-5 h-5" />
+          <p className="text-accent mb-2 flex items-center justify-center gap-2 font-semibold">
+            <Camera className="h-5 w-5" />
             Through My Eyes
           </p>
-          <h2 className="font-display text-5xl text-foreground mb-4">A Gallery of Her</h2>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
-            Moments I&apos;ve captured of the girl who makes my heart skip. Each photo tells a story of why she&apos;s
-            so special.
+          <h2 className="font-display text-foreground mb-4 text-5xl">A Gallery of Her</h2>
+          <p className="text-foreground/70 mx-auto max-w-2xl text-lg">
+            Moments I&apos;ve captured of the girl who makes my heart skip. Each photo tells a story
+            of why she&apos;s so special.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, i) => (
             <motion.div
               key={i}
@@ -61,16 +61,16 @@ export default function ThroughMyEyesGallery() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="group relative rounded-3xl overflow-hidden cursor-pointer"
+              className="group relative cursor-pointer overflow-hidden rounded-3xl"
             >
-              <div className="relative h-80 bg-secondary rounded-3xl overflow-hidden shadow-lg">
+              <div className="bg-secondary relative h-80 overflow-hidden rounded-3xl shadow-lg">
                 <Image
                   width={0}
                   height={0}
                   src={photo.image || "/placeholder.svg"}
                   alt={photo.quote}
                   sizes="100vw"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
 
@@ -82,8 +82,12 @@ export default function ThroughMyEyesGallery() {
                 viewport={{ once: true }}
                 className="mt-4"
               >
-                <p className="font-display text-lg text-foreground italic text-center">"{photo.quote}"</p>
-                <p className="text-sm text-accent font-medium text-center mt-2">📸 Captured by Me</p>
+                <p className="font-display text-foreground text-center text-lg italic">
+                  &quot;{photo.quote}&quot;
+                </p>
+                <p className="text-accent mt-2 text-center text-sm font-medium">
+                  📸 Captured by Me
+                </p>
               </motion.div>
             </motion.div>
           ))}

@@ -91,7 +91,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="fixed bottom-6 right-6 z-50"
+      className="fixed right-6 bottom-6 z-50"
     >
       <audio ref={audioRef} src={src} preload="metadata" loop />
 
@@ -100,20 +100,20 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsExpanded(true)}
-          className="w-16 h-16 bg-primary text-foreground rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+          className="bg-primary text-foreground flex h-16 w-16 items-center justify-center rounded-full shadow-lg transition-shadow hover:shadow-xl"
         >
-          <Music className="w-6 h-6" />
+          <Music className="h-6 w-6" />
         </motion.button>
       ) : (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-card border-2 border-primary/30 rounded-3xl p-4 shadow-2xl backdrop-blur-md w-80"
+          className="bg-card border-primary/30 w-80 rounded-3xl border-2 p-4 shadow-2xl backdrop-blur-md"
         >
-          <div className="flex items-center justify-between mb-3">
+          <div className="mb-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Music className="w-5 h-5 text-primary" />
-              <h3 className="font-display text-lg text-foreground">{title}</h3>
+              <Music className="text-primary h-5 w-5" />
+              <h3 className="font-display text-foreground text-lg">{title}</h3>
             </div>
             <button
               onClick={() => setIsExpanded(false)}
@@ -131,12 +131,12 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
               max={duration || 0}
               value={currentTime}
               onChange={handleSeek}
-              className="w-full h-1.5 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+              className="bg-muted accent-primary h-1.5 w-full cursor-pointer appearance-none rounded-full"
               style={{
                 background: `linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) ${progress}%, var(--color-muted) ${progress}%, var(--color-muted) 100%)`,
               }}
             />
-            <div className="flex justify-between text-xs text-foreground/60 mt-1">
+            <div className="text-foreground/60 mt-1 flex justify-between text-xs">
               <span>{formatTime(currentTime)}</span>
               <span>{formatTime(duration)}</span>
             </div>
@@ -148,20 +148,20 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={togglePlay}
-              className="w-10 h-10 bg-primary text-foreground rounded-full flex items-center justify-center hover:bg-secondary transition-colors"
+              className="bg-primary text-foreground hover:bg-secondary flex h-10 w-10 items-center justify-center rounded-full transition-colors"
             >
-              {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+              {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="ml-0.5 h-5 w-5" />}
             </motion.button>
 
-            <div className="flex items-center gap-2 flex-1">
+            <div className="flex flex-1 items-center gap-2">
               <button
                 onClick={toggleMute}
                 className="text-foreground/70 hover:text-foreground transition-colors"
               >
                 {isMuted || volume === 0 ? (
-                  <VolumeX className="w-4 h-4" />
+                  <VolumeX className="h-4 w-4" />
                 ) : (
-                  <Volume2 className="w-4 h-4" />
+                  <Volume2 className="h-4 w-4" />
                 )}
               </button>
               <input
@@ -171,7 +171,7 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
                 step="0.01"
                 value={volume}
                 onChange={handleVolumeChange}
-                className="flex-1 h-1.5 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+                className="bg-muted accent-primary h-1.5 flex-1 cursor-pointer appearance-none rounded-full"
               />
             </div>
           </div>
@@ -180,4 +180,3 @@ export default function MusicPlayer({ src, title }: MusicPlayerProps) {
     </motion.div>
   )
 }
-

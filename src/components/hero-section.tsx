@@ -7,13 +7,13 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen bg-linear-to-b from-background via-primary/20 to-background flex items-center justify-center px-4 py-20 overflow-hidden"
+      className="from-background via-primary/20 to-background relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-b px-4 py-20"
     >
       {/* Decorative circles */}
-      <div className="absolute top-20 right-10 w-40 h-40 bg-accent/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-40 h-40 bg-secondary/30 rounded-full blur-3xl"></div>
+      <div className="bg-accent/30 absolute top-20 right-10 h-40 w-40 rounded-full blur-3xl"></div>
+      <div className="bg-secondary/30 absolute bottom-20 left-10 h-40 w-40 rounded-full blur-3xl"></div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
         {/* Left text content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -26,7 +26,7 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-accent font-semibold text-lg"
+              className="text-accent text-lg font-semibold"
             >
               ✨ Hi there!
             </motion.p>
@@ -34,7 +34,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="font-display text-5xl md:text-6xl text-foreground leading-tight"
+              className="font-display text-foreground text-5xl leading-tight md:text-6xl"
             >
               I&apos;m <span className="text-primary">Katii</span>
             </motion.h1>
@@ -42,7 +42,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-2xl md:text-3xl text-foreground/80 font-light"
+              className="text-foreground/80 text-2xl font-light md:text-3xl"
             >
               The main character of Xiro&apos;s heart.
             </motion.p>
@@ -52,7 +52,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-foreground/70 text-lg max-w-sm"
+            className="text-foreground/70 max-w-sm text-lg"
           >
             Class of 2025 • Dreamer • Foodie • Forever optimistic
           </motion.p>
@@ -66,10 +66,12 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgba(255, 192, 203, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-3 bg-primary text-foreground rounded-full font-semibold flex items-center gap-2 hover:bg-secondary transition-colors"
+              onClick={() =>
+                document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="bg-primary text-foreground hover:bg-secondary flex items-center gap-2 rounded-full px-8 py-3 font-semibold transition-colors"
             >
-              <Heart className="w-5 h-5" />
+              <Heart className="h-5 w-5" />
               See Our Story
             </motion.button>
           </motion.div>
@@ -82,16 +84,16 @@ export default function HeroSection() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="relative"
         >
-          <div className="relative w-full aspect-square max-w-md mx-auto">
+          <div className="relative mx-auto aspect-square w-full max-w-md">
             {/* Decorative frame */}
-            <div className="absolute inset-0 bg-linear-to-br from-primary to-secondary rounded-3xl shadow-2xl"></div>
-            <div className="absolute inset-2 bg-background rounded-3xl overflow-hidden">
+            <div className="from-primary to-secondary absolute inset-0 rounded-3xl bg-linear-to-br shadow-2xl"></div>
+            <div className="bg-background absolute inset-2 overflow-hidden rounded-3xl">
               <Image
                 width={0}
                 height={0}
                 src="/hero-image.jpeg"
                 alt="Katii - Main Character"
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
                 sizes="100vw"
               />
             </div>
@@ -102,14 +104,14 @@ export default function HeroSection() {
               transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
               className="absolute -top-10 -right-10"
             >
-              <Heart className="w-12 h-12 text-primary fill-primary" />
+              <Heart className="text-primary fill-primary h-12 w-12" />
             </motion.div>
             <motion.div
               animate={{ y: [10, -10, 10] }}
               transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY }}
               className="absolute -bottom-10 -left-10"
             >
-              <Heart className="w-8 h-8 text-accent fill-accent" />
+              <Heart className="text-accent fill-accent h-8 w-8" />
             </motion.div>
           </div>
         </motion.div>
@@ -119,9 +121,9 @@ export default function HeroSection() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 transform"
       >
-        <ArrowDown className="w-6 h-6 text-accent" />
+        <ArrowDown className="text-accent h-6 w-6" />
       </motion.div>
     </section>
   )
