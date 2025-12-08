@@ -9,6 +9,7 @@ import WishlistPromises from "@/components/wishlist-promises"
 import Navigation from "@/components/navigation"
 import FloatingDoodles from "@/components/floating-doodles"
 import Footer from "@/components/footer"
+import MusicPlayer from "@/components/music-player"
 
 const container = {
   hidden: { opacity: 0 },
@@ -32,6 +33,7 @@ export default function Home() {
       <TraitsShowcase />
       <WishlistPromises />
       <Footer />
+      <MusicPlayer src="/music/LightningMoment.mp3" title="Lightning Moment" />
     </motion.main>
   )
 }
