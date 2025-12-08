@@ -96,7 +96,7 @@ export default function HeroSection() {
               onClick={() =>
                 document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })
               }
-              className="bg-primary text-foreground hover:bg-secondary flex items-center gap-2 rounded-full px-8 py-3 font-semibold transition-colors"
+              className="bg-primary text-foreground hover:bg-secondary flex cursor-pointer items-center gap-2 rounded-full px-8 py-3 font-semibold transition-colors"
             >
               <Heart className="h-5 w-5" />
               See Our Story
