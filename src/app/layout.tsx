@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Nunito, Dancing_Script } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import MusicPlayerProvider from "@/components/music-player-provider"
 import "./globals.css"
 
 const nunito = Nunito({ subsets: ["latin"], variable: "--font-sans" })
@@ -111,6 +112,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${nunito.variable} ${dancingScript.variable} font-sans antialiased`}>
         {children}
+        <MusicPlayerProvider />
         <Analytics />
       </body>
     </html>
