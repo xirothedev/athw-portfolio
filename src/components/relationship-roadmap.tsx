@@ -24,7 +24,7 @@ const milestones = [
   {
     icon: Sparkles,
     title: `${new Date().getDate()} ${new Date().toLocaleString("default", { month: "long" })} ${new Date().getFullYear()}`,
-    date: "March 2025",
+    date: "",
     description: "The days we spend together",
   },
 ]
